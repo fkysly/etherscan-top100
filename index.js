@@ -7,7 +7,7 @@ const holdReg = /A Total (.+) Tokens Held by the Top 100 accounts from the Total
 const addressReg = /Total Token Holders: ([0-9]+)/g
 
 var rule = new schedule.RecurrenceRule()
-rule.minute = 0
+rule.minute = 5
 var j = schedule.scheduleJob(rule, fetchTop100)
 
 function fetchTop100() {
