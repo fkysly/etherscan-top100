@@ -19,6 +19,8 @@ rule.minute = 8
 var j = schedule.scheduleJob(rule, fetchTop100)
 
 router.get('/records', function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "X-Requested-With")
   Record.find(function(err, records) {
     if (err) res.send(err)
     res.json(records)
